@@ -36,3 +36,4 @@ TODO.md
 .provider.tf
 .backend.config
 .backend.hcl
+kubeconfig_*

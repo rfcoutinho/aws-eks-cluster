@@ -1,14 +1,17 @@
 module "eks" {
   source                        = "terraform-aws-modules/eks/aws"
   cluster_name                  = var.cluster_name
-  cluster_version               = "1.18"
+  cluster_version               = "1.19"
   subnets                       = module.vpc.private_subnets
   cluster_security_group_id     = aws_security_group.eks-cluster-sg.id
   cluster_create_security_group = false
-  worker_create_security_group  = false
-  manage_cluster_iam_resources  = false
   cluster_iam_role_name         = aws_iam_role.eks_cluster_role.name
-  write_kubeconfig              = true
+  manage_cluster_iam_resources  = false
+
+  worker_create_security_group = false
+  worker_security_group_id     = aws_security_group.eks-nodes-sg.id
+
+  write_kubeconfig = true
 
   tags = {
     Environment = "challenge"
@@ -17,7 +20,7 @@ module "eks" {
   }
 
   vpc_id = module.vpc.vpc_id
-
+  
   depends_on = [
     aws_iam_role.eks_cluster_role,
   ]
