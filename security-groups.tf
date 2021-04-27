@@ -18,6 +18,20 @@ resource "aws_security_group" "eks-nodes-sg" {
   }
 }
 
+# General security rules
+resource "aws_security_group_rule" "allow-tls-to-web" {
+  description       = "Allow TLS to web"
+  type              = "egress"
+  from_port         = 443
+  to_port           = 443
+  protocol          = "tcp"
+  security_group_id = aws_security_group.eks-nodes-sg.id
+  cidr_blocks       = ["0.0.0.0/0"]
+  ipv6_cidr_blocks  = ["::/0"]
+
+}
+
+
 # Security Group rules attached to EKS Cluster security group
 
 resource "aws_security_group_rule" "eks-nodes-tls-to-control-plane" {
