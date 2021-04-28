@@ -23,7 +23,7 @@ Default region name [None]: us-west-2
 Default output format [None]: json
 ``` 
 
-2. Setup the `/infra/.backend.hcl` template as bellow:
+2. Create the `/infra/.backend.hcl` file and fulfill the template as bellow:
 ```
 bucket = "<S3_BUCKET_REMOTE_BACKEND>"
 key    = "<KEY_TO_RECEIVE_TERRAFORM_STATE>"
