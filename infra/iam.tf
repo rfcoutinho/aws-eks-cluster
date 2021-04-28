@@ -53,6 +53,7 @@ POLICY
 
   tags = {
     eks = "node"
+    "kubernetes.io/cluster/${var.cluster_name}" = "owned"
   }
 }
 
