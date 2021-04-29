@@ -52,7 +52,7 @@ resource "aws_iam_role" "eks_node_role" {
 POLICY
 
   tags = {
-    eks = "node"
+    eks                                         = "node"
     "kubernetes.io/cluster/${var.cluster_name}" = "owned"
   }
 }

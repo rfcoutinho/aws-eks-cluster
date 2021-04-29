@@ -20,7 +20,7 @@ module "eks" {
   }
 
   vpc_id = module.vpc.vpc_id
-  
+
   depends_on = [
     aws_iam_role.eks_cluster_role,
   ]
@@ -44,8 +44,8 @@ resource "aws_eks_node_group" "node-group-1" {
   instance_types = ["t3a.small", "t3.small"]
 
   scaling_config {
-    desired_size = 2
-    max_size     = 3
+    desired_size = 1
+    max_size     = 1
     min_size     = 1
   }
 
