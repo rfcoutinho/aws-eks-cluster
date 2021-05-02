@@ -1,5 +1,13 @@
 # Define IAM roles and policies to be atteched to AWS EKS resources
 
+
+## EKS ASG node instance profile
+
+resource "aws_iam_instance_profile" "eks_node_instance_profile" {
+  name = "eks_node_instance_profile"
+  role = aws_iam_role.eks_node_role.name
+}
+
 ## EKS Cluster Role management ##
 resource "aws_iam_role" "eks_cluster_role" {
   name        = "eks_cluster_role"
