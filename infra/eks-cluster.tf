@@ -7,6 +7,7 @@ module "eks" {
   cluster_create_security_group = false
   cluster_iam_role_name         = aws_iam_role.eks_cluster_role.name
   manage_cluster_iam_resources  = false
+  manage_worker_iam_resources   = false
 
   worker_create_security_group = false
   worker_security_group_id     = aws_security_group.eks-nodes-sg.id
@@ -31,6 +32,7 @@ module "eks" {
       instance_type                 = "t2.small"
       asg_desired_capacity          = 1
       additional_security_group_ids = [aws_security_group.eks-nodes-sg.id]
+      iam_instance_profile_name     = aws_iam_instance_profile.eks_node_instance_profile.name
     }
   ]
 
