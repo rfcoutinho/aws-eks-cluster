@@ -5,9 +5,12 @@ Infrastructure as Code for EKS Cluster using Terraform
 ## Description
 
 Following the Infrastructure as Code [IaC](https://en.wikipedia.org/wiki/Infrastructure_as_code) principles
- This repositority contains [Terraform](https://learn.hashicorp.com/terraform?utm_source=terraform_io&utm_content=terraform_io_hero) code to create and manage an [EKS Cluster](https://docs.aws.amazon.com/eks/latest/userguide/what-is-eks.html) with self-managed nodes  
+This repositority contains [Terraform](https://learn.hashicorp.com/terraform?utm_source=terraform_io&utm_content=terraform_io_hero) code to create and manage an [EKS Cluster](https://docs.aws.amazon.com/eks/latest/userguide/what-is-eks.html) with self-managed nodes  
  
- This repository is partnered with the [gitops-k8s-apps](https://github.com/rfcoutinho/gitops-k8s-apps) repository, so you can control your Kuberentes applications directly from it.
+This repository is partnered with the [gitops-k8s-apps](https://github.com/rfcoutinho/gitops-k8s-apps) repository, so you can control your Kuberentes applications directly from it.
+
+### Architeture Decisions :factory_worker:
+Check the [Architecture Decision Records](docs/adr) of this project in the docs section
 
 ## Prerequisites  and recommendations :heavy_check_mark:
 1. Dedicated IAM Role to be used by Terraform with sufficient permissions to create and manage resources on AWS. :cop:
