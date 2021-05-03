@@ -5,11 +5,13 @@ Infrastructure as Code for EKS Cluster using Terraform
 ## Description
 
 Following the Infrastructure as Code [IaC](https://en.wikipedia.org/wiki/Infrastructure_as_code) principles
- This repositority contains [Terraform](https://learn.hashicorp.com/terraform?utm_source=terraform_io&utm_content=terraform_io_hero) code to create and manage an [EKS Cluster](https://docs.aws.amazon.com/eks/latest/userguide/what-is-eks.html) with [Managed Nodes Gropups](https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html)
+ This repositority contains [Terraform](https://learn.hashicorp.com/terraform?utm_source=terraform_io&utm_content=terraform_io_hero) code to create and manage an [EKS Cluster](https://docs.aws.amazon.com/eks/latest/userguide/what-is-eks.html) with self-managed nodes  
+ This repository is partnered with the [gitops-k8s-apps](https://github.com/rfcoutinho/gitops-k8s-apps) repository, so you can control your Kuberentes applications directly from it.
 
-## Prerequisites  and recommendations
+## Prerequisites  and recommendations :heavy_check_mark:
 1. Dedicated IAM Role to be used by Terraform with sufficient permissions to create and manage resources on AWS.
 2. Create a [S3](https://aws.amazon.com/s3/) bucket for Terraform remote backend. See more information about Terraform's [backend](https://www.terraform.io/docs/language/settings/backends/index.html) and [Security Best Practices for Amazon S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/security-best-practices.html)
+3. Take note about all the cloud *resources and costs* this project will create and increase into your AWS billing. :moneybag:
 
 ## Usage
 
